@@ -51,7 +51,7 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Proyectos <span className="gradient-text">Destacados</span>
           </h2>
@@ -63,12 +63,13 @@ const ProjectsSection = () => {
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className={`group glass-effect hover:shadow-emerald transition-smooth ${
+              className={`group glass-effect hover:shadow-emerald transition-smooth hover:scale-105 hover:-translate-y-2 animate-fade-in-up ${
                 project.featured ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project image */}
               <div className="relative overflow-hidden rounded-t-lg">
@@ -77,7 +78,11 @@ const ProjectsSection = () => {
                     {project.title.split(' ').map(word => word[0]).join('')}
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-smooth"></div>
+                <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-smooth flex items-center justify-center">
+                  <div className="text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-smooth transform translate-y-2 group-hover:translate-y-0">
+                    Ver proyecto
+                  </div>
+                </div>
               </div>
 
               <CardHeader>

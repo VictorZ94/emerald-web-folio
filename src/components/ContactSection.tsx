@@ -86,7 +86,7 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Hablemos <span className="gradient-text">Juntos</span>
           </h2>
@@ -99,8 +99,8 @@ const ContactSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact info and social */}
-            <div className="space-y-8">
-              <Card className="glass-effect">
+            <div className="space-y-8 animate-slide-in-left">
+              <Card className="glass-effect hover:shadow-emerald transition-smooth">
                 <CardHeader>
                   <CardTitle>Información de Contacto</CardTitle>
                   <CardDescription>
@@ -131,7 +131,7 @@ const ContactSection = () => {
               </Card>
 
               {/* Social links */}
-              <Card className="glass-effect">
+              <Card className="glass-effect hover:shadow-emerald transition-smooth">
                 <CardHeader>
                   <CardTitle>Sígueme en Redes</CardTitle>
                   <CardDescription>
@@ -146,7 +146,7 @@ const ContactSection = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-smooth group ${social.color}`}
+                        className={`p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-smooth group hover:scale-110 hover:-translate-y-1 ${social.color}`}
                         title={social.label}
                       >
                         <social.icon className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-smooth" />
@@ -175,7 +175,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact form */}
-            <Card className="glass-effect">
+            <Card className="glass-effect hover:shadow-emerald transition-smooth animate-slide-in-right">
               <CardHeader>
                 <CardTitle>Envíame un Mensaje</CardTitle>
                 <CardDescription>
@@ -243,7 +243,7 @@ const ContactSection = () => {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth hover:scale-105"
                   >
                     {isSubmitting ? (
                       <>

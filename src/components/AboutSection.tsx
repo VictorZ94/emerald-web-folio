@@ -43,7 +43,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Sobre <span className="gradient-text">Mí</span>
           </h2>
@@ -57,7 +57,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
             {/* Personal info and photo */}
             <div className="lg:col-span-1">
-              <Card className="glass-effect p-6 text-center">
+              <Card className="glass-effect p-6 text-center animate-slide-in-left">
                 {/* Avatar placeholder */}
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border-4 border-primary/20">
                   <div className="text-6xl text-primary/50">👨‍💻</div>
@@ -85,7 +85,7 @@ const AboutSection = () => {
             </div>
 
             {/* Bio and experience */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8 animate-slide-in-right">
               {/* Bio */}
               <Card className="glass-effect">
                 <CardHeader>
@@ -143,7 +143,8 @@ const AboutSection = () => {
 
           {/* Skills */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="glass-effect hover:shadow-emerald transition-smooth">
+            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+                  style={{ animationDelay: '0.1s' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Globe className="h-5 w-5 text-primary" />
@@ -165,7 +166,8 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth">
+            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+                  style={{ animationDelay: '0.2s' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Database className="h-5 w-5 text-primary" />
@@ -187,7 +189,8 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth">
+            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+                  style={{ animationDelay: '0.3s' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Code className="h-5 w-5 text-primary" />
@@ -209,7 +212,8 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth">
+            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+                  style={{ animationDelay: '0.4s' }}>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Smartphone className="h-5 w-5 text-primary" />
