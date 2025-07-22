@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Home, User, Briefcase, BookOpen, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { href: "#home", label: "Inicio", icon: Home },
@@ -90,8 +91,9 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Theme Toggle & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button 
               onClick={() => scrollToSection("#contact")}
               size="sm"
@@ -134,7 +136,10 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4 border-t border-border/30">
+              <div className="pt-4 border-t border-border/30 space-y-3">
+                <div className="flex items-center justify-center">
+                  <ThemeToggle />
+                </div>
                 <Button 
                   onClick={() => scrollToSection("#contact")}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth"
