@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -11,19 +11,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "tu.email@ejemplo.com",
-    href: "mailto:tu.email@ejemplo.com"
+    value: "example@email.com",
+    href: "mailto:example@email.com"
   },
   {
     icon: Phone,
-    label: "Teléfono",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567"
+    label: "Phone",
+    value: "(123) 456-7890",
+    href: "tel:+11234567890"
   },
   {
     icon: MapPin,
-    label: "Ubicación",
-    value: "Tu Ciudad, País",
+    label: "Location", 
+    value: "City, Country",
     href: "#"
   }
 ];
@@ -31,21 +31,23 @@ const contactInfo = [
 const socialLinks = [
   {
     icon: Github,
-    label: "GitHub",
     href: "https://github.com/tuusuario",
-    color: "hover:text-gray-300"
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/tuusuario",
-    color: "hover:text-blue-400"
+    label: "GitHub"
   },
   {
     icon: Twitter,
-    label: "Twitter",
-    href: "https://twitter.com/tuusuario",
-    color: "hover:text-blue-400"
+    href: "https://twitter.com/tuusuario", 
+    label: "Twitter"
+  },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/tuusuario",
+    label: "LinkedIn"
+  },
+  {
+    icon: MessageSquare,
+    href: "https://wa.me/123456789",
+    label: "WhatsApp"
   }
 ];
 
@@ -83,184 +85,150 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        {/* Section header */}
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
+      
+      <div className="container mx-auto px-6 relative">
+        {/* Section header with decorative line */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Hablemos <span className="gradient-text">Juntos</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            ¿Tienes un proyecto en mente? ¿Quieres colaborar? No dudes en contactarme. 
-            Siempre estoy abierto a nuevas oportunidades y conversaciones interesantes.
-          </p>
+          <div className="flex items-center justify-center mb-6">
+            <div className="w-20 h-px bg-gradient-to-r from-transparent to-primary"></div>
+            <h2 className="text-4xl md:text-5xl font-bold mx-8">
+              Contact <span className="gradient-text">me</span>
+            </h2>
+            <div className="w-20 h-px bg-gradient-to-l from-transparent to-primary"></div>
+          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact info and social */}
-            <div className="space-y-8 animate-slide-in-left">
-              <Card className="glass-effect hover:shadow-emerald transition-smooth">
-                <CardHeader>
-                  <CardTitle>Información de Contacto</CardTitle>
-                  <CardDescription>
-                    Puedes contactarme a través de cualquiera de estos medios
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <a
-                      key={index}
-                      href={info.href}
-                      className="flex items-center gap-4 p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-smooth group"
-                    >
-                      <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-smooth">
-                        <info.icon className="h-5 w-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="font-medium group-hover:text-primary transition-smooth">
-                          {info.label}
-                        </div>
-                        <div className="text-muted-foreground text-sm">
-                          {info.value}
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </CardContent>
-              </Card>
-
-              {/* Social links */}
-              <Card className="glass-effect hover:shadow-emerald transition-smooth">
-                <CardHeader>
-                  <CardTitle>Sígueme en Redes</CardTitle>
-                  <CardDescription>
-                    Conectemos en las redes sociales
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-4">
-                    {socialLinks.map((social, index) => (
-                      <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`p-4 rounded-lg bg-muted/30 hover:bg-primary/10 transition-smooth group hover:scale-110 hover:-translate-y-1 ${social.color}`}
-                        title={social.label}
-                      >
-                        <social.icon className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-smooth" />
-                      </a>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* CTA */}
-              <Card className="glass-effect bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+        <div className="max-w-4xl mx-auto">
+          {/* Contact info cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 animate-slide-in-up">
+            {contactInfo.map((info, index) => (
+              <Card 
+                key={index}
+                className="glass-effect hover:shadow-gold transition-smooth hover:scale-105 bg-card/50 border-primary/20"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">¿Listo para trabajar juntos?</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Transformemos tus ideas en soluciones digitales extraordinarias
-                  </p>
-                  <Button 
-                    size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth"
-                  >
-                    Envíame un Email
-                    <Mail className="ml-2 h-4 w-4" />
-                  </Button>
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
+                    <info.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <div className="text-primary font-medium text-lg mb-1">{info.value}</div>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Contact form */}
-            <Card className="glass-effect hover:shadow-emerald transition-smooth animate-slide-in-right">
-              <CardHeader>
-                <CardTitle>Envíame un Mensaje</CardTitle>
-                <CardDescription>
-                  Completa el formulario y te responderé lo antes posible
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Nombre *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Tu nombre completo"
-                        required
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="tu@email.com"
-                        required
-                        className="bg-background/50 border-border/50 focus:border-primary"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Asunto *</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="¿De qué quieres hablar?"
-                      required
-                      className="bg-background/50 border-border/50 focus:border-primary"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Mensaje *</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Cuéntame sobre tu proyecto o idea..."
-                      rows={6}
-                      required
-                      className="bg-background/50 border-border/50 focus:border-primary resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth hover:scale-105"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
-                        Enviando...
-                      </>
-                    ) : (
-                      <>
-                        Enviar Mensaje
-                        <Send className="ml-2 h-4 w-4" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            ))}
           </div>
+
+          {/* Social links with decorative line */}
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-32 h-px bg-gradient-to-r from-transparent to-primary/50"></div>
+              <div className="flex gap-4 mx-8">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-smooth hover:scale-110 hover:-translate-y-1"
+                    title={social.label}
+                  >
+                    <social.icon className="h-5 w-5 text-primary" />
+                  </a>
+                ))}
+              </div>
+              <div className="w-32 h-px bg-gradient-to-l from-transparent to-primary/50"></div>
+            </div>
+          </div>
+
+          {/* Thanks message */}
+          <div className="text-center animate-fade-in-up">
+            <p className="text-2xl font-medium gradient-text mb-8">
+              "Thanks for Scrolling"
+            </p>
+          </div>
+
+          {/* Contact form */}
+          <Card className="glass-effect hover:shadow-gold transition-smooth animate-slide-in-up bg-card/30 border-primary/20">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-foreground">Nombre *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Tu nombre completo"
+                      required
+                      className="bg-background/50 border-primary/30 focus:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-foreground">Email *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="tu@email.com"
+                      required
+                      className="bg-background/50 border-primary/30 focus:border-primary"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="subject" className="text-foreground">Asunto *</Label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="¿De qué quieres hablar?"
+                    required
+                    className="bg-background/50 border-primary/30 focus:border-primary"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-foreground">Mensaje *</Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Cuéntame sobre tu proyecto o idea..."
+                    rows={6}
+                    required
+                    className="bg-background/50 border-primary/30 focus:border-primary resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold transition-smooth hover:scale-105"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      Enviar Mensaje
+                      <Mail className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

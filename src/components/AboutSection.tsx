@@ -1,4 +1,4 @@
-import { Code, Database, Globe, Smartphone, Users, Zap } from "lucide-react";
+import { Code, Database, Globe, Smartphone, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -17,26 +17,6 @@ const skills = {
   ]
 };
 
-const experience = [
-  {
-    title: "Senior Full Stack Developer",
-    company: "Tech Company",
-    period: "2022 - Presente",
-    description: "Liderazgo técnico en proyectos de gran escala usando React, Next.js y arquitecturas cloud-native."
-  },
-  {
-    title: "Frontend Developer",
-    company: "Startup Innovadora",
-    period: "2020 - 2022",
-    description: "Desarrollo de interfaces modernas y responsivas, optimización de performance y experiencia de usuario."
-  },
-  {
-    title: "Full Stack Developer",
-    company: "Agencia Digital",
-    period: "2018 - 2020",
-    description: "Desarrollo completo de aplicaciones web desde el diseño hasta el despliegue en producción."
-  }
-];
 
 const AboutSection = () => {
   return (
@@ -84,10 +64,9 @@ const AboutSection = () => {
               </Card>
             </div>
 
-            {/* Bio and experience */}
-            <div className="lg:col-span-2 space-y-8 animate-slide-in-right">
-              {/* Bio */}
-              <Card className="glass-effect">
+            {/* Bio */}
+            <div className="lg:col-span-2 animate-slide-in-right">
+              <Card className="glass-effect h-full">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Users className="h-5 w-5 text-primary" />
@@ -111,31 +90,6 @@ const AboutSection = () => {
                     escribiendo artículos técnicos y manteniéndome al día con las últimas 
                     tendencias en desarrollo web.
                   </p>
-                </CardContent>
-              </Card>
-
-              {/* Experience */}
-              <Card className="glass-effect">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-primary" />
-                    Experiencia Profesional
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    {experience.map((exp, index) => (
-                      <div key={index} className="relative pl-6 border-l-2 border-primary/20 last:border-l-0">
-                        <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
-                        <div className="mb-2">
-                          <h4 className="font-semibold">{exp.title}</h4>
-                          <p className="text-primary font-medium">{exp.company}</p>
-                          <p className="text-sm text-muted-foreground">{exp.period}</p>
-                        </div>
-                        <p className="text-muted-foreground text-sm">{exp.description}</p>
-                      </div>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             </div>
