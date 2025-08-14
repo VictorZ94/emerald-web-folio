@@ -42,7 +42,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up">
             <Button 
               size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-emerald transition-smooth hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-gold transition-smooth hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
             >
               Ver mis proyectos
               <ArrowDown className="ml-2 h-4 w-4" />

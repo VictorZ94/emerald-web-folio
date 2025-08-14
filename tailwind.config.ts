@@ -56,10 +56,20 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				emerald: {
-					DEFAULT: 'hsl(var(--emerald))',
-					dark: 'hsl(var(--emerald-dark))',
-					light: 'hsl(var(--emerald-light))',
+				gold: {
+					50: '#fcf7f0',
+					100: '#f9eddb',
+					200: '#f2d8b6',
+					300: '#e7b87f',
+					400: '#df9a58',
+					500: '#d77f38',
+					600: '#c9682d',
+					700: '#a75127',
+					800: '#864226',
+					900: '#6c3822',
+					DEFAULT: 'hsl(var(--gold))',
+					dark: 'hsl(var(--gold-dark))',
+					light: 'hsl(var(--gold-light))',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -129,8 +139,8 @@ export default {
 					'50%': { transform: 'translateY(-10px)' }
 				},
 				'glow': {
-					'0%, 100%': { boxShadow: '0 0 20px rgba(0, 255, 178, 0.2)' },
-					'50%': { boxShadow: '0 0 30px rgba(0, 255, 178, 0.4)' }
+					'0%, 100%': { boxShadow: '0 0 20px hsl(42 85% 55% / 0.2)' },
+					'50%': { boxShadow: '0 0 30px hsl(42 85% 55% / 0.4)' }
 				}
 			},
 			animation: {
