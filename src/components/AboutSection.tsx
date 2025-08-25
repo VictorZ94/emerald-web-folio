@@ -4,16 +4,16 @@ import { Badge } from "@/components/ui/badge";
 
 const skills = {
   frontend: [
-    "React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Angular"
+    "React", "Next.js", "TypeScript", "Tailwind CSS"
   ],
   backend: [
-    "Node.js", "Express", "Prisma", "PostgreSQL", "MongoDB", "Redis"
+    "Node.js", "Express", "Nest.js", "Prisma", "PostgreSQL", "MongoDB", "Redis"
   ],
   tools: [
-    "Docker", "AWS", "Vercel", "Git", "Jest", "Cypress"
+    "Docker", "AWS", "GCP", "Vercel", "Git", "Jest", "Cypress"
   ],
   mobile: [
-    "React Native", "Expo", "Flutter", "PWA"
+    "React Native", "Expo"
   ]
 };
 
@@ -42,14 +42,14 @@ const AboutSection = () => {
                 <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border-4 border-primary/20">
                   <div className="text-6xl text-primary/50">👨‍💻</div>
                 </div>
-                
-                <h3 className="text-2xl font-bold mb-2">Tu Nombre</h3>
+
+                <h3 className="text-2xl font-bold mb-2">Víctor Zuluaga</h3>
                 <p className="text-primary font-medium mb-4">Full Stack Developer</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Con más de 5 años de experiencia en desarrollo web, me especializo 
                   en crear aplicaciones modernas, escalables y centradas en el usuario.
                 </p>
-                
+
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-border">
                   <div className="text-center">

@@ -41,7 +41,7 @@ const Footer = () => {
           {/* Brand and description */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold gradient-text mb-4">
-              {"<TuNombre />"}
+              Víctor Zuluaga
             </h3>
             <p className="text-muted-foreground mb-6 max-w-md">
               Full Stack Developer especializado en crear experiencias web modernas 
@@ -108,7 +108,7 @@ const Footer = () => {
 
         <div className="border-t border-border/30 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Tu Nombre. Todos los derechos reservados.
+            © {currentYear} Victor Zuluaga. Todos los derechos reservados.
           </p>
           
           <p className="text-sm text-muted-foreground flex items-center gap-1">

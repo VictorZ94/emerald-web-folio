@@ -66,7 +66,7 @@ const Navigation = () => {
             }}
             className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
           >
-            {"<TuNombre />"}
+            Victor Zuluaga
           </a>
 
           {/* Desktop Navigation */}

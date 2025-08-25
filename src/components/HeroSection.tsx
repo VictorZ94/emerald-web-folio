@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Name and title */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-delayed-fade-in">
             Hola, soy{" "}
-            <span className="gradient-text">Tu Nombre</span>
+            <span className="gradient-text">Víctor Zuluaga</span>
           </h1>
           
           <h2 className="text-2xl md:text-3xl font-medium text-primary mb-8 animate-delayed-fade-in-2">

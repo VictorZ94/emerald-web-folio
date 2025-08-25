@@ -1,5 +1,7 @@
 import { GitBranch, GitCommit, Star, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
+import axios from "axios";
 
 const GitHubStats = () => {
   // En un proyecto real, estos datos vendrían de la API de GitHub
@@ -30,6 +32,23 @@ const GitHubStats = () => {
     }
   ];
 
+  useEffect(() => {
+    console.log("Github URl", import.meta.env.VITE_GITHUB_BASE_URL);
+    async function getGithubUserInfo(userName) {
+      try {
+        const headers = {
+          Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`
+        }
+        const response = await axios.get(`https://api.github.com/users/${userName}/events`)
+        console.log("response", response);
+      } catch {
+        // notify user of error
+        console.error("Error getching data")
+      }
+    }
+    getGithubUserInfo('victorz94');
+  }, [])
+  
   return (
     <section id="github" className="py-20 bg-card/30">
       <div className="container mx-auto px-6">
