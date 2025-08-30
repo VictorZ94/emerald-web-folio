@@ -1,22 +1,21 @@
-import { Code, Database, Globe, Smartphone, Users } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Code, Database, Globe, Smartphone, Users } from "lucide-react";
 
 const skills = {
-  frontend: [
-    "React", "Next.js", "TypeScript", "Tailwind CSS"
-  ],
+  frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
   backend: [
-    "Node.js", "Express", "Nest.js", "Prisma", "PostgreSQL", "MongoDB", "Redis"
+    "Node.js",
+    "Express",
+    "Nest.js",
+    "Prisma",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
   ],
-  tools: [
-    "Docker", "AWS", "GCP", "Vercel", "Git", "Jest", "Cypress"
-  ],
-  mobile: [
-    "React Native", "Expo"
-  ]
+  tools: ["Docker", "AWS", "GCP", "Vercel", "Git", "Jest", "Cypress"],
+  mobile: ["React Native", "Expo"],
 };
-
 
 const AboutSection = () => {
   return (
@@ -28,8 +27,8 @@ const AboutSection = () => {
             Sobre <span className="gradient-text">Mí</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Desarrollador apasionado por crear soluciones innovadoras y escalables 
-            que impactan positivamente en la experiencia del usuario.
+            Desarrollador apasionado por crear soluciones innovadoras y
+            escalables que impactan positivamente en la experiencia del usuario.
           </p>
         </div>
 
@@ -44,21 +43,28 @@ const AboutSection = () => {
                 </div>
 
                 <h3 className="text-2xl font-bold mb-2">Víctor Zuluaga</h3>
-                <p className="text-primary font-medium mb-4">Full Stack Developer</p>
+                <p className="text-primary font-medium mb-4">
+                  Full Stack Developer
+                </p>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Con más de 5 años de experiencia en desarrollo web, me especializo 
-                  en crear aplicaciones modernas, escalables y centradas en el usuario.
+                  Con más de 5 años de experiencia en desarrollo web, me
+                  especializo en crear aplicaciones modernas, escalables y
+                  centradas en el usuario.
                 </p>
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-border">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">50+</div>
-                    <div className="text-sm text-muted-foreground">Proyectos</div>
+                    <div className="text-sm text-muted-foreground">
+                      Proyectos
+                    </div>
                   </div>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-primary">5+</div>
-                    <div className="text-sm text-muted-foreground">Años exp.</div>
+                    <div className="text-sm text-muted-foreground">
+                      Años exp.
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -75,20 +81,23 @@ const AboutSection = () => {
                 </CardHeader>
                 <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Comencé mi carrera en desarrollo web hace más de 5 años, motivado por la 
-                    fascinación de convertir ideas creativas en soluciones digitales funcionales. 
-                    Desde entonces, he trabajado en proyectos diversos, desde startups emergentes 
+                    Comencé mi carrera en desarrollo web hace más de 5 años,
+                    motivado por la fascinación de convertir ideas creativas en
+                    soluciones digitales funcionales. Desde entonces, he
+                    trabajado en proyectos diversos, desde startups emergentes
                     hasta empresas consolidadas.
                   </p>
                   <p>
-                    Me especializo en el ecosistema de JavaScript moderno, con un enfoque particular 
-                    en React, Next.js y TypeScript. También tengo experiencia sólida en backend 
-                    con Node.js y bases de datos tanto relacionales como NoSQL.
+                    Me especializo en el ecosistema de JavaScript moderno, con
+                    un enfoque particular en React, Next.js y TypeScript.
+                    También tengo experiencia sólida en backend con Node.js y
+                    bases de datos tanto relacionales como NoSQL.
                   </p>
                   <p>
-                    Cuando no estoy programando, disfruto contribuyendo a proyectos open source, 
-                    escribiendo artículos técnicos y manteniéndome al día con las últimas 
-                    tendencias en desarrollo web.
+                    Cuando no estoy programando, disfruto contribuyendo a
+                    proyectos open source, escribiendo artículos técnicos y
+                    manteniéndome al día con las últimas tendencias en
+                    desarrollo web.
                   </p>
                 </CardContent>
               </Card>
@@ -97,8 +106,10 @@ const AboutSection = () => {
 
           {/* Skills */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: '0.1s' }}>
+            <Card
+              className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Globe className="h-5 w-5 text-primary" />
@@ -108,8 +119,8 @@ const AboutSection = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.frontend.map((skill) => (
-                    <Badge 
-                      key={skill} 
+                    <Badge
+                      key={skill}
                       variant="secondary"
                       className="bg-muted/50 hover:bg-primary/10 hover:text-primary transition-smooth"
                     >
@@ -120,8 +131,10 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: '0.2s' }}>
+            <Card
+              className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Database className="h-5 w-5 text-primary" />
@@ -131,8 +144,8 @@ const AboutSection = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.backend.map((skill) => (
-                    <Badge 
-                      key={skill} 
+                    <Badge
+                      key={skill}
                       variant="secondary"
                       className="bg-muted/50 hover:bg-primary/10 hover:text-primary transition-smooth"
                     >
@@ -143,8 +156,10 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: '0.3s' }}>
+            <Card
+              className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+              style={{ animationDelay: "0.3s" }}
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Code className="h-5 w-5 text-primary" />
@@ -154,8 +169,8 @@ const AboutSection = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.tools.map((skill) => (
-                    <Badge 
-                      key={skill} 
+                    <Badge
+                      key={skill}
                       variant="secondary"
                       className="bg-muted/50 hover:bg-primary/10 hover:text-primary transition-smooth"
                     >
@@ -166,8 +181,10 @@ const AboutSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
-                  style={{ animationDelay: '0.4s' }}>
+            <Card
+              className="glass-effect hover:shadow-emerald transition-smooth hover:scale-105 animate-fade-in-up"
+              style={{ animationDelay: "0.4s" }}
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <Smartphone className="h-5 w-5 text-primary" />
@@ -177,8 +194,8 @@ const AboutSection = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {skills.mobile.map((skill) => (
-                    <Badge 
-                      key={skill} 
+                    <Badge
+                      key={skill}
                       variant="secondary"
                       className="bg-muted/50 hover:bg-primary/10 hover:text-primary transition-smooth"
                     >

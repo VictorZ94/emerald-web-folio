@@ -41,15 +41,23 @@ All colors MUST be HSL. Dark theme with gold accents.
     --radius: 0.75rem;
 
     /* Custom gold design tokens */
-    --gold: 42 85% 55%;
-    --gold-dark: 28 73% 40%;
+    --gold: 34 70% 83%;
+    --gold-dark: 23 63% 48%;
     --gold-light: 42 85% 65%;
     --gold-glow: 42 85% 55%;
-    
+
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
-    --gradient-glow: linear-gradient(135deg, hsl(var(--gold) / 0.1), hsl(var(--gold) / 0.05));
-    
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--gold)),
+      hsl(var(--gold-dark))
+    );
+    --gradient-glow: linear-gradient(
+      135deg,
+      hsl(var(--gold) / 0.1),
+      hsl(var(--gold) / 0.05)
+    );
+
     /* Shadows and effects */
     --shadow-gold: 0 10px 30px -10px hsl(var(--gold) / 0.3);
     --glow-gold: 0 0 20px hsl(var(--gold) / 0.5);
@@ -145,11 +153,11 @@ All colors MUST be HSL. Dark theme with gold accents.
   .glow-gold {
     box-shadow: var(--glow-gold);
   }
-  
+
   .shadow-gold {
     box-shadow: var(--shadow-gold);
   }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
